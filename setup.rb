@@ -21,9 +21,9 @@ end
 # Seed data
 # ---
 
+Comment.delete_all
 Post.delete_all
 User.delete_all
-Comment.delete_all
 
 (1..3).each do |i|
   user = User.create!(name: "User #{i}", email: "user#{i}@example.com")
