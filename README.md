@@ -1,12 +1,15 @@
 # ActiveRecord playground
 
-## Getting started
+## Setup
 
 ```sh
 docker compose build
-docker compose run app bash
-bundle install
-bundle exec ruby -e "require './config'; require './db/migrate/001_create_users'; CreateUsers.new.change"
-docker compose run app ruby script.rb
-docker compose run app ruby console.rb
+docker compose run --rm app bundle install
+docker compose run --rm app ruby setup.rb
+```
+
+## Run
+
+```sh
+docker compose run --rm app ruby main.rb
 ```
