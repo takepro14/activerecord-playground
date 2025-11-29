@@ -1,6 +1,7 @@
 require './config'
 require './models/user'
 require './models/post'
+require './models/comment'
 require 'pry'
 require 'pry-byebug'
 
@@ -8,12 +9,12 @@ require 'pry-byebug'
 # 1. Run script:
 # ---
 
-# def main
-#   binding.pry
-#   User.all
-# end
+def main
+  binding.pry
+  User.eager_load(posts: :comments)
+end
 
-# main
+main
 
 # ---
 # 2. Start pry session:
